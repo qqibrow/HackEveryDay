@@ -9,14 +9,14 @@ var url = 'http://www.avaloncommunities.com/california/sunnyvale-apartments/aval
 var xpath = '//*[@id=\"bedrooms-1\"]/div[1]/div[1]/div/div/div[2]/div/table/tbody/tr[1]/td[4]';
 page.open(url, function () {
     // Checks for bottom div and scrolls down from time to time
-    var cc = getElementByXpath(xpath);
-    console.log(cc);
-    console.log(cc.innerHTML);
     var seq = 1;
     window.setInterval(function() {
         // Checks if there is a div with class=".has-more-items"
         // (not sure if this is the best way of doing it)
+        //console.log(page.content);
          var count = getElementByXpath(xpath);
+          var thisNode = count.iterateNext();
+         console.log(thisNode.textContent);
         // var count = getElementByXpath("//html/body");
         if(count === null) { // Didn't find
             console.log("scoll to the bottom of the page");
