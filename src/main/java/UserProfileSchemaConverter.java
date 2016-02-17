@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.avro.Schema;
@@ -125,6 +126,17 @@ public class UserProfileSchemaConverter {
         return false;
     }
 
+    public Schema.Type getNullOrSomeUnionType(Schema schema) {
+        if(schema.getType() == Schema.Type.UNION && schema.getTypes().size() == 2 &&
+           (schema.getTypes().get(0).getType() == Schema.Type.NULL || schema.getTypes().get(1).getType() == Schema.Type.NULL)) {
+            Schema s1 = schema.getTypes().get(0);
+            Schema s2 = schema.getTypes().get(1);
+            Schema notNullSchema = s1.getType() != Schema.Type.NULL ? s1 : s2;
+            return notNullSchema.getType();
+        }
+        return null;
+    }
+
     public boolean isNullOrContainerUnion(Schema schema) {
         if(schema.getType() == Schema.Type.UNION && schema.getTypes().size() == 2 &&
            (schema.getTypes().get(0).getType() == Schema.Type.NULL || schema.getTypes().get(1).getType() == Schema.Type.NULL)) {
@@ -160,6 +172,79 @@ public class UserProfileSchemaConverter {
                 return true;
         }
         return false;
+    }
+
+    public String toCassanddraType(Schema.Type type) throws  Exception {
+        assert type != null: "input to toCassandraType is null";
+
+        HashMap<Schema.Type, String> avroTypeToCassandraType = new HashMap<Schema.Type, String>();
+        avroTypeToCassandraType.put(Schema.Type.STRING, "text");
+        avroTypeToCassandraType.put(Schema.Type.BYTES, "blob");
+        avroTypeToCassandraType.put(Schema.Type.LONG, "bigint");
+        avroTypeToCassandraType.put(Schema.Type.INT, "int");
+        avroTypeToCassandraType.put(Schema.Type.FLOAT, "float");
+        avroTypeToCassandraType.put(Schema.Type.DOUBLE, "double");
+        avroTypeToCassandraType.put(Schema.Type.BOOLEAN, "boolean");
+        // Here we encode enum to String. Maybe we will have a better solution latter.
+        avroTypeToCassandraType.put(Schema.Type.ENUM, "ascii");
+        if(avroTypeToCassandraType.containsKey(type)) {
+            return avroTypeToCassandraType.get(type);
+        } else {
+            throw new Exception("type " + type.toString() + " is not in type conversion hashmap.");
+        }
+    }
+
+    private class FieldWithType {
+        private String name;
+        private String type;
+        FieldWithType(String name, String type) {
+            this.name = name;
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+    }
+    public String toCassandraSchema(final Schema schema) throws  Exception {
+        List<FieldWithType> fieldList = new ArrayList<FieldWithType>();
+        for(Schema.Field field: schema.getFields()) {
+            String fieldName = field.name();
+            Schema filedSchema = field.schema();
+            Schema.Type type = null;
+            if(isPrimitiveType(filedSchema)) {
+                type = filedSchema.getType();
+            } else if (isNullOrSomeUnion(filedSchema)) {
+                type = getNullOrSomeUnionType(filedSchema);
+            }
+            if(type == null) {
+                throw new Exception("type is null which is not possible");
+            }
+            String cassandraType = toCassanddraType(type);
+            fieldList.add(new FieldWithType(fieldName, cassandraType));
+            // So far we got fieldName and fieldType then we are able to construct Cassandra schema
+        }
+
+        final StringBuilder stringBuilder = new StringBuilder();
+        for(FieldWithType fieldWithType: fieldList) {
+            stringBuilder.append(fieldWithType.getName());
+            stringBuilder.append(' ');
+            stringBuilder.append(fieldWithType.getType());
+            stringBuilder.append(",\n");
+        }
+        return stringBuilder.toString();
     }
 
     public Node toAnotherSchema(Schema schema, String name) throws Exception, IOException {

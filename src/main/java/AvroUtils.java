@@ -1,18 +1,15 @@
 /**
  * Created by lniu on 11/23/15.
+ * Code is from https://github.com/linkedin/gobblin/blob/master/gobblin-utility/src/main/java/gobblin/util/AvroUtils.java
+ * However, original code doesn't support union and array type.
+ * Added support for union and array here.
  */
 
-import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-import com.google.common.io.Closer;
-import com.google.common.primitives.Longs;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
@@ -45,15 +42,6 @@ public class AvroUtils {
      * @return the schema of the field
      */
     private static Optional<Schema> getFieldSchemaHelper(Schema schema, List<String> pathList, int field) {
-        /*
-        if(schema.getType() == Schema.Type.UNION && schema.getTypes().size() == 2 &&
-           (schema.getTypes().get(0).getType() == Schema.Type.NULL || schema.getTypes().get(1).getType() == Schema.Type.NULL)) {
-            Schema s1 = schema.getTypes().get(0);
-            Schema s2 = schema.getTypes().get(1);
-            Schema notNullSchema = s1.getType() != Schema.Type.NULL ? s1 : s2;
-            return  getFieldSchemaHelper(notNullSchema, pathList, field);
-        }
-        */
         String curr = pathList.get(field);
         if(curr.equals(UNION_INDICATOR)) {
             Schema s1 = schema.getTypes().get(0);
