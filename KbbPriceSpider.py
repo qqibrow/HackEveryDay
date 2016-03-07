@@ -15,12 +15,3 @@ class KbbPriceSpider(CrawlSpider):
 
     def parse_item(self,response):
         self.log('A response from %s just arrived!' % response.url)
-
-    def parse(self, response):
-        p = re.compile(ur'(?:\"values\": )({(?:\s|.)*?)(?:,\s+\"timAmount\")')
-        matched = p.search(response.body)
-        if matched:
-          yield {
-              'url': response.url,
-              'prices': matched.group(1)
-          }
