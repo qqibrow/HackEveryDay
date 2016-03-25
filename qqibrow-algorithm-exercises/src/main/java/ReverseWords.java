@@ -10,7 +10,7 @@ public class ReverseWords {
         if(s.isEmpty()) {
             return s;
         }
-        String[] strs = s.split(" ");
+        String[] strs = s.replaceFirst("^\\s+", "").split("\\s+");
         for(int i = 0, j = strs.length - 1; i < j; ++i, --j) {
             String tmp = strs[i];
             strs[i] = strs[j];
@@ -28,6 +28,6 @@ public class ReverseWords {
     }
 
     public static void main(String[] args) {
-        System.out.println(new ReverseWords().reverseWords(" 1"));
+        System.out.println(new ReverseWords().reverseWords("   a   b "));
     }
 }
