@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html> <!--<![endif]-->
+<head>
+    <meta name="text:Typekit ID" content="enb6iqr"/>
+    <meta name="text:Body Font Family" content="'proxima-nova', Helvetica, Arial, sans-serif"/>
+    <meta name="text:Title Font Family" content="'proxima-nova', Helvetica, Arial, sans-serif"/>
+    <meta name="text:Nav Font Family" content="Helvetica-Neue, Helvetica, Arial, sans-serif"/>
+    <meta name="text:Apply Link" content=""/>
+    <meta name="text:APM Link" content=""/>
+    <meta name="text:EAP Link" content=""/>
+    <meta name="text:MCAP Link" content=""/>
+    <meta name="text:DAP Link" content=""/>
+    <meta name="select:Associate Color" content="#FF8B12" title="EAP"/>
+    <meta name="select:Associate Color" content="#0074FF" title="APM"/>
+    <meta name="select:Associate Color" content="#30D3B6" title="DAP"/>
+    <meta name="select:Associate Color" content="#F80E5D" title="MCAP"/>
+    <meta name="image:HeaderImage" content="http://static.tumblr.com/hqzrrgx/iiGnm8tnn/yahoo_2x.png"/>
+    <meta name="image:YahooLogo" content="http://static.tumblr.com/hqzrrgx/iiGnm8tnn/yahoo_2x.png"/>
+    <meta name="image:SearchIcon" content="http://static.tumblr.com/hqzrrgx/PtVnpt1pk/search_2x.png"/>
+    <meta name="image:SearchIconHover" content="http://static.tumblr.com/hqzrrgx/05pnpt1lz/search-hover_2x.png"/>
+    <meta name="image:SearchIconActive" content="http://static.tumblr.com/hqzrrgx/RUXnpt2is/searcheap_2x.png"/>
+    <meta name="image:Reblog" content="http://static.tumblr.com/hqzrrgx/GkYnoyocp/reblog_2x.png"/>
+    <meta name="image:ReblogHover" content="http://static.tumblr.com/hqzrrgx/2SOnoyoco/reblog-hover_2x.png"/>
+    <meta name="image:Link" content="http://static.tumblr.com/hqzrrgx/bjvnoyocn/link_2x.png"/>
+    <meta name="image:LinkHover" content="http://static.tumblr.com/hqzrrgx/rX7noyocl/link-hover_2x.png"/>
+    <meta name="image:Like" content="http://static.tumblr.com/hqzrrgx/Q4snoyock/like_2x.png"/>
+    <meta name="image:LikeHover" content="http://static.tumblr.com/hqzrrgx/S8Vnoyocj/like-hover_2x.png"/>
+    <meta name="image:LikedHeart" content=""/>
+    <!--enb6iqr-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--PREFETCH-->
+    <link rel="prerender" href="{image:Reblog}"/>
+    <link rel="prerender" href="{image:ReblogHover}"/>
+    <link rel="prerender" href="{image:Link}"/>
+    <link rel="prerender" href="{image:LinkHover}"/>
+    <link rel="prerender" href="{image:Like}"/>
+    <link rel="prerender" href="{image:LikeHover}"/>
+    <link rel="prerender" href="{image:LikedHeart}"/>
+    <link rel="prerender" href="{image:SearchIcon}"/>
+    <link rel="prerender" href="{image:SearchIconHover}"/>
+    <link rel="prerender" href="{image:SearchIconActive}"/>
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+    {block:IfTypekitID}
+    <script type="text/javascript" src="//use.typekit.net/{text:Typekit ID}.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    {/block:IfTypekitID}
+
+<script src="//use.typekit.net/enb6iqr.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+    <style>
+    .box {
+        width:500px;
+    }
+    .posts article header {
+    width: 500px;
+}
+    .photoset-grid {
+        width:500px;
+    }
+        body {
+            background-color: #F8F8FA;
+            margin-left: 300px;
+            overflow:auto;
+        }
+        h1 {
+            margin: 0 0 0 0;
+        }
+        h2 {
+            margin: 0 0 0 0;
+        }
+        header {
+            position: absolute;
+            overflow: hidden;
+            top: 0px;
+            left: 0px;
+            background-color: #5A00C8;
+            height: 300px;
+            min-width: 1100px;
+            width: 100%;
+        }
+        .align-helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .yahoo-logo {
+            position: absolute;
+            text-align: center;
+            left: 0px;
+            height: 300px;
+            width: 300px;
+            background-color: #5A00C8;
+        }
+        .yahoo-logo:before,
+        .yahoo-logo:after {
+            content: " ";
+            display: none;
+        }
+        .yahoo-logo img {
+            vertical-align: middle;
+            width: 182px;
+            height: 45px;
+        }
+        /**
+        Need to determine how this reacts to screen resizing
+        */
+        img.banner {
+            position: relative;
+            left: 300px;
+            width: 100%;
+            height: auto;
+            width: auto\9; /* ie8 */
+        }
+        .banner-text {
+            position: absolute;
+            white-space: nowrap;
+            overflow: hidden;
+            top: 125px;
+            left: 300px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 175px;
+            color: #fff;
+            font-family: {text:Title Font Family};
+        }
+        .banner-text h1 {
+            padding-bottom: 12px;
+            font-weight: 500;
+            font-size: 32px;
+        }
+        .banner-text h2 {
+            font-size: 16px;
+            font-weight: 200;
+        }
+        nav {
+            position: absolute;
+            top: 300px;
+            left: 0px;
+            background-color: #fff;
+            height: 48px;
+            min-width: 1100px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            -moz-box-shadow:    0px 2px 5px 0px rgba(0,0,0,0.03);
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.03);
+            box-shadow:         0px 2px 5px 0px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+        nav .pad {
+            padding-left: 300px;
+        }
+        nav p {
+            display: inline-block;
+            margin-left: 50px;
+            font-family: {text:Nav Font Family};
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        nav form {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        nav input {
+            border-style: none;
+            font-family: {text:Nav Font Family};
+            font-size: 16px;
+            font-weight: 200;
+        }
+        nav a {
+            text-decoration: none;
+            color: {select:Associate Color};
+        }
+        nav input.hidden-input {
+            visibility: hidden;
+        }
+        nav input.hidden-input:focus {
+            outline-width: 0px;
+        }
+        nav .search-icon {
+            margin-left: 87px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url({image:SearchIcon}) no-repeat;
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+        }
+        nav .search-icon:hover {
+            margin-left: 87px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url({image:SearchIconHover}) no-repeat;
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+        }
+        nav .search-icon-clicked {
+            margin-left: 87px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url({image:SearchIconActive}) no-repeat;
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+        }
+        main {
+            clear: both;
+            position: relative;
+            top: 384px;
+            height: 500px;
+            width: 750px;
+        }
+        .content {
+            position: absolute;
+            left: 0;
+            width: 525px;
+        }
+        .content .box {
+            display:block;
+            background-color: #fff;
+            margin-bottom: 40px;
+            width: 500px;
+            -moz-box-shadow:    0px 2px 5px 0px rgba(0,0,0,0.03);
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.03);
+            box-shadow:         0px 2px 5px 0px rgba(0,0,0,0.03);
+        }
+        .content p {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            font-weight: 200;
+            color: #262626;
+            line-height: 25px;
+            margin: 0 0 0 0;
+        }
+        .content a {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 500;
+            color:  {select:Associate Color};
+            line-height: 25px;
+            margin: 0 0 0 0;
+        }
+        .content li {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            font-weight: 200;
+            color: #262626;
+            line-height: 25px;
+            margin: 0 0 0 0;
+        }
+        .content blockquote {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            font-weight: 200;
+            color: #262626;
+            line-height: 25px;
+        }
+        .content ul {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            font-weight: 200;
+            color: #262626;
+            line-height: 25px;
+            margin: 0 0 0 0;
+        }
+        .box .padding {
+            padding: 40px 50px 40px 50px;
+        }
+        .text-body img {
+            margin-left: -50px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 500px;
+            height: auto;
+        }
+        .content .post-title {
+            display: table-cell;
+            vertical-align: middle;
+            width: 400px;
+            min-height: 50px;
+            padding-bottom: 25px;
+        }
+        .content .post-title h1, .content .post-title h1 a {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: {text:Title Font Family};
+            font-size: 32px;
+            font-weight: 500;
+            color: {select:Associate Color};
+            max-width: 300px;
+        }
+        .content .post-quote h2 {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: {text:Title Font Family};
+            font-size: 28px;
+            font-weight: 500;
+            color: {select:Associate Color};
+            max-width: 300px;
+        }
+        .content .post-quote .apostrophe {
+            display: inline-block;
+            margin-right: 1px;
+            /**the font to use?**/
+            font-family: Georgia;
+            font-size: 28px;
+            font-weight: 300;
+            color: {select:Associate Color};
+            max-width: 300px;
+        }
+        .content p.quote-source {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            font-weight: 200;
+            color: #262626;
+            line-height: 25px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .content .footer {
+            display: inline-block;
+            width: 400px;
+            margin-top: 20px;
+        }
+        .content .question-box {
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding-top: 23px;
+            padding-bottom: 23px;
+            background-color: #f3f3f3;
+            width: 400px;
+            padding-left: 18px;
+            vertical-align: middle;
+        }
+        p.q-author {
+            font-size: 14px;
+            font-weight: 200;
+            font-family: {text:Body Font Family};
+            color: #262626;
+            line-height: 25px;
+        }
+        p.q-author a {
+               font-family: {text:Body Font Family};
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 400;
+            color:  {select:Associate Color};
+            line-height: 25px;
+            text-transform: capitalize;
+            margin: 0 0 0 0;
+        }
+        .chat-box {
+            margin-left: -50px;
+        }
+        .chat-box .odd {
+            display: inline-block;
+            padding-left: 50px;
+            padding-top:16px;
+            padding-bottom:16px;
+            width: 100%;
+        }
+        .chat-box .even {
+            display: inline-block;
+            width: 100%;
+            padding-left: 50px;
+            background-color: #f6f6f6;
+            padding-top:16px;
+            padding-bottom:16px;
+        }
+        p.chat-author {
+            color: #787D82;
+            font-family: {text:Body Font Family};
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 5px;
+            float: left;
+        }
+        .tags {
+            width: 300px;
+            float: left;
+        }
+        .tags p {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 3px 5px 3px 5px;
+            background-color: {select:Associate Color};
+            font-family: {text:Body Font Family};
+            font-size: 12px;
+            font-weight: 500;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+        .content .signature {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 30px;
+            height: 30px;
+        }
+        .no-search-result {
+            font-family: {text:Body Font Family};
+            font-size: 16px;
+            font-weight: 200;
+            color: #262626;
+            line-height: 25px;
+            text-align: center;
+        }
+        .signature img {
+            display: inline;
+            vertical-align: middle;
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .signature p {
+            display: inline;
+            font-family: {text:Body Font Family};
+            font-size: 14px;
+            color: #787D82;
+            font-weight: 500;
+        }
+        .like-reblog {
+            float: right;
+            width: 100px;
+        }
+        .like-reblog div {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .custom-like-button {
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer !important;
+        }
+        /* class for the Tumblr Like Button iframe */
+        .like_button {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 10;
+        }
+        /* Force iframe to fill button */
+        .like_button iframe {
+            cursor: pointer !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .sneaky_like_button {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url({image:Like}) no-repeat;
+            background-size: 20px 20px;
+            z-index: 2;
+        }
+        .like_button:hover + .sneaky_like_button {
+            cursor: pointer;
+            background: url({image:LikeHover}) no-repeat;
+            background-size: 20px 20px;
+        }
+        .like_button.liked + .sneaky_like_button {
+            cursor: pointer;
+            background: url('{image:LikedHeart}') no-repeat;
+            background-size: 20px 20px;
+        }
+        .reblog {
+            background: url({image:Reblog}) no-repeat;
+            background-size: 20px 20px;
+        }
+        .reblog:hover {
+            background: url({image:ReblogHover}) no-repeat;
+            background-size: 20px 20px;
+        }
+        .link {
+            background: url({image:Link}) no-repeat;
+            background-size: 20px 20px;
+        }
+        .link:hover {
+            background: url({image:LinkHover}) no-repeat;
+            background-size: 20px 20px;
+        }
+        .arrow-circle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-left: 25px;
+            vertical-align: middle;
+        }
+        .arrow {
+            position: absolute;
+            top: 18px;
+            left: 17px;
+            width: 16px;
+            height: 14px;
+        }
+        #circle {
+            width: 50px;
+            height: 50px;
+            background: {select:Associate Color};
+            -moz-border-radius: 25px;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+        }
+        #rectangle {
+            display: inline-block;
+            width: 8px;
+            height: 5px;
+            background: white;
+            float:left;
+            margin-top:4.5px;
+            margin-bottom:4.5px;
+        }
+        #triangle-right {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-left: 8px solid white;
+            border-bottom: 7px solid transparent;
+            float:left;
+        }
+        aside {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            height: 400px;
+            width: 180px;
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        .apply {
+            height: 40px;
+            width: 163px;
+            background-color: #5A00C8;
+            -webkit-border-radius: 3px;
+               -moz-border-radius: 3px;
+                    border-radius: 3px; /* future proofing */
+             -khtml-border-radius: 3px; /* for old Konqueror browsers */
+             text-align: center;
+        }
+        .apply p {
+            font-family: {text:Nav Font Family};
+            font-size: 16px;
+            color: #fff;
+            padding-top: 12px;
+            margin: 0 0 0 0;
+        }
+        .apply a {
+            text-decoration: none;
+        }
+        aside h3 {
+            font-family: {text:Title Font Family};
+            color: #b9b9b9;
+            font-size: 14px;
+            margin: 40px 0 0 0;
+        }
+        aside a {
+            text-decoration: none;
+        }
+        .aside-links ul {
+            list-style: none;
+            padding: 0 0 0 0;
+            margin: 20px 0 0 0;
+            background-color: ;
+        }
+        .aside-links li {
+            padding: 0 0 12px 0;
+            color: #464e56;
+            font-family: {text:Title Font Family};
+            font-size: 16px;
+            font-weight: 200;
+        }
+        .aside-links a {
+            text-decoration: none;
+        }
+        p.reblogged-from-date {
+            color: #b9b9b9;
+            font-family: {text:Title Font Family};
+            font-size: 14px;
+            font-weight: 200;
+            margin-top: 30px;
+        }
+        p.reblogged-from {
+            color: #787D82;
+            font-family: {text:Title Font Family};
+            font-size: 14px;
+            font-weight: 200;
+        }
+        hr.reblogged-from {
+            color: #b9b9b9;
+            border-style: inset;
+            border-width: 1px;
+            opacity: 0.15;
+            margin-top: 12px;
+        }
+        .text-body figure {
+            display: inline-block;
+            margin-left: 0px;
+            width: 500px;
+            height: 300px;
+        }
+        .text-body .tmblr-embed {
+             margin-left: -90px;
+        }
+    </style>
+    <script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+</head>
+<body>
+    <header>
+            <a href="/"><div class="yahoo-logo">
+                 <span class="align-helper"></span><img src="{image:YahooLogo}" alt="Yahoo logo"/>
+            </div>
+            
+            <img class="banner" alt="cover photo" src="{image:HeaderImage}"/>
+            
+            <div class="banner-text">
+                <h1>{Title}</h1>
+                <h2>{Description}</h2>
+            </div></a>
+    </header>
+    <nav>
+        <span class="pad"></span>
+        {block:Pages}
+            <a href={URL} id="nav-{Label}"><p>{Label}</p></a>
+        {/block:Pages}
+            <a href="/ask"><p>Questions</p></a>
+        <a href="yahoo.com"></a>
+        <form action="/search" title="search" method="get">
+            <div class="search-icon" id="sbutton"></div>
+            <input type="text" name="q" class="hidden-input" id="ibox" value="{SearchQuery}"/>
+        </form>
+        <script>
+            onClickHandler = function(){
+              document.getElementById("sbutton").className="search-icon-clicked";
+
+                document.getElementById("ibox").style.visibility="visible";
+                document.getElementById("ibox").focus();
+            };
+            document.getElementById("ibox").onblur = function(){
+                document.getElementById("sbutton").className="search-icon";
+                document.getElementById("ibox").value=""; //clear
+                document.getElementById("ibox").style.visibility="hidden";
+            };
+            document.getElementById("sbutton").onclick=onClickHandler
+        </script>
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+    //THIS SCRIPT IS A HACK TO DISPLAY APPLY PAGE LINK ONLY WHEN ON MOBILE
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+if (!isMobile.any()) {
+    document.getElementById("nav-Apply").style.visibility = "hidden";
+    document.getElementById("nav-Apply").style.position = "absolute";
+    document.getElementById("nav-Apply").style.left = "-800px";
+}
+        </script>
+    </nav>
+    <main>
+        <aside>
+            <a href="{text:Apply Link}"><div class="apply">
+                <p>Apply</p>
+            </div></a>
+            <h3>TAGS</h3>
+            <div class="aside-links">
+                <ul>
+                    <a href="/tagged/News"><li>News</li></a>
+                    <a href="/tagged/Culture"><li>Culture</li></a>
+                    <a href="/tagged/Events"><li>Events</li></a>
+                    <a href="/tagged/Product"><li>Product</li></a>
+                    <a href="/tagged/Bios"><li>Bios</li></a>
+                    <a href="/tagged/FAQ"><li>FAQ</li></a>
+                </ul>
+            </div>
+            <h3>ASSOCIATE PROGRAMS</h3>
+                <div class="aside-links">
+                <ul>
+                    <a href="{text:APM Link}"><li>Product Management</li></a>
+                    <a href="{text:EAP Link}"><li>Engineering</li></a>
+                    <a href="{text:MCAP Link}"><li>Marketing</li></a>
+                    <a href="{text:DAP Link}"><li>Design</li></a>
+                </ul>
+            </div>
+        </aside>
+        <div class="content">
+        <div>
+            {block:SearchPage}
+                {block:NoSearchResults}
+                    <div class="no-search-result">
+                        <p>Sorry no search results found</p>
+                    </div>
+                {/block:NoSearchResults}
+            {/block:SearchPage}
+
+
+            {block:Posts inlineMediaWidth="500"}
+            <div class="box">
+                {block:Text}
+                    <div class="padding">
+                        <div class="post-title">
+                             {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                        </div>
+                        <div class="text-body">
+                            <p>{body}</p>
+                        </div>
+                {/block:Text}
+
+                {block:Photo}
+                <img src="{PhotoURL-500}">
+                <div class="padding">
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                {/block:Photo}
+                
+                {block:Photoset}
+                {block:Photos}
+                <img src="{PhotoURL-500}"
+                    width="{PhotoWidth-500}"height="{PhotoHeight-500}" />
+
+                 {block:Caption}
+                   {Caption}
+                    {/block:Caption}
+
+                    {/block:Photos}
+
+                    {block:Caption}
+                        {Caption}
+                    {/block:Caption}
+                {/block:Photoset}
+
+                
+                {block:Quote}
+                    <div class="padding">
+                    <div class="post-quote">
+                        <h2><div class="apostrophe">“</div>{Quote}<div class="apostrophe">”</h2>
+                    </div>
+                    {block:Source}
+                        <p class="quote-source">— {Source}</p>
+                    {/block:Source}
+                {/block:Quote}
+
+                {block:Audio}
+                    {AudioPlayer}
+                    <div class="padding">
+                    {block:Caption}
+                      {Caption}
+                    {/block:Caption}
+                {/block:Audio}
+
+                {block:Video}
+                    {Video-500}
+                    <div class="padding">
+                    {block:Caption}
+                        {Caption}
+                    {/block:Caption}
+                {/block:Video}
+
+                {block:Chat}
+                <div class="padding">
+                    <div class="post-title">                      
+                          {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                    </div>
+                    <div class="chat-box">
+                      {block:Lines}
+                        <div class="{Alt}"><p class="chat-author">Person {Name}:</p><p>{Line}</p></div>
+                      {/block:Lines}
+                    </div>
+                {/block:Chat}
+
+
+                {block:Link}
+                    <div class="padding">
+                    <div class="post-title">
+                      <h1>{Name}</h1>
+                      <a href="{URL}" {Target}>
+                      <div class="arrow-circle">
+                        <div id="circle"></div>
+                          <div class="arrow">
+                            <div id="rectangle"></div>
+                            <div id="triangle-right"></div>
+                          </div>
+                      </div>
+                      </a>
+                    </div>
+                    <p>{Description}</p>
+                {/block:Link}
+
+
+                {block:Answer}
+                    <div class="padding">
+                        <p class="q-author">{Asker} asked:</p>
+                        <div class="question-box">
+                            <p>{Question}</p>
+                        </div>
+                        <p>{Answer}</p>
+                {/block:Answer}
+
+                
+                <div class="signature">
+                    <img src="{PostAuthorPortraitURL-30}">
+                    <p>{PostAuthorName}</p>
+                </div>
+                <div class="footer">
+                    <div class="tags">
+                        {block:Tags}
+                        <a href="{TagURLChrono}"><p>{Tag}</p></a>
+                        {/block:Tags}
+                    </div>
+                    <div class="like-reblog">
+                        <div class="custom-like-button">
+                            {LikeButton}
+                            <span class="sneaky_like_button"></span>
+                        </div>
+                        <a href="{ReblogURL}"><div class="reblog"></div></a>
+                        <a href="{permalink}"><div class="link"></div></a>
+                    </div>
+                </div>
+                {block:PermalinkPage}
+                  {block:Date}
+                    <p class="reblogged-from-date">{Month} {DayOfMonth}{DayOfMonthSuffix}, {Year}</p>
+                    <hr class="reblogged-from">
+                  {/block:Date}
+                  {block:PostNotes}
+                    {PostNotes-16}
+                  {/block:PostNotes}
+                {/block:PermalinkPage}
+              </div>
+            </div>
+            {/block:Posts}
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
