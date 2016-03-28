@@ -104,6 +104,7 @@ ENV/
 .idea/uiDesigner.xml
 
 .idea/*
+./qqibrow-algorithm-exercises/.idea/*
 
 # Gradle:
 .idea/gradle.xml
