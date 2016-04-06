@@ -18,7 +18,7 @@ public class LongestSubStringWithoutRepeatingChar {
                 // has seen curr before at position lastshown[curr]
                 len = Math.max(len, i - lastshown[curr]);
                 for(int j = start + 1; j < lastshown[curr]; ++j) {
-                    lastshown[j] = -1;
+                    lastshown[s.charAt(j)] = -1;
                 }
                 start = lastshown[curr];
                 lastshown[curr] = i;
