@@ -7,8 +7,8 @@ public class ExcelSheetColumnNumber {
                 return 0;
             } else {
                 char curr = s.charAt(pos);
-                int number = (int)(curr - 'A') + 1;
-                return helper(s, pos-1) * 26  + curr;
+                int number = curr - 'A' + 1;
+                return helper(s, pos-1) * 26  + number;
             }
         }
 
