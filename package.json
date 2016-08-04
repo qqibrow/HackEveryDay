@@ -1,0 +1,18 @@
+{
+  "name": "track_here",
+  "version": "1.0.0",
+  "description": "track element on webpage",
+  "main": "track.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "track",
+    "web"
+  ],
+  "author": "lniu",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.61.0"
+  }
+}

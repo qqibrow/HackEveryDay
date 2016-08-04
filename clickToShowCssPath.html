@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/css-selector-generator/build/css-selector-generator.min.js"></script>
+<script>
+$(document).ready(function(){
+// track every click
+document.body.addEventListener('click', function (event) {
+    var my_selector_generator = new CssSelectorGenerator;
+      // get reference to the element user clicked on
+      var element = event.target;
+        // get unique CSS selector for that element
+        var selector = my_selector_generator.getSelector(element);
+          // do whatever you need to do with that selector
+          console.log('selector', selector);
+});
+});
+</script>
+</head>
+<body>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+</body>
+</html>
+
