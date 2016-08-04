@@ -2,7 +2,8 @@
  * Created by lniu on 12/23/15.
  */
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import algorithm.TwoSum;
 
 public class PrimitiveTypeTest {
     @Test
